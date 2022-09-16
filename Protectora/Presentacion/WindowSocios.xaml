@@ -1,0 +1,95 @@
+﻿<Window x:Class="Protectora.Presentacion.WindowSocios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Protectora.Presentacion"
+        mc:Ignorable="d"
+        Title="WindowSocios" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="38*"/>
+
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="24*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="82*"/>
+            <ColumnDefinition Width="279*"/>
+            <ColumnDefinition Width="18*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Protectora;component/Recursos/19juni3.jpg" Opacity="0.6"/>
+        </Grid.Background>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Background="#FFF9F7F3" Height="420" Grid.RowSpan="12" VerticalAlignment="Top" Width="794" Grid.ColumnSpan="4" Margin="0,0,-0.4,0"/>
+        <GroupBox Grid.Column="2" Header="Caracteristicas" HorizontalAlignment="Left" Height="290" Margin="0,0.8,0,0" VerticalAlignment="Top" Width="548" Grid.RowSpan="9" Grid.Row="1"/>
+        <ListBox x:Name="ListBoxSocios" HorizontalAlignment="Left" Height="354" Margin="10,9.8,0,0" VerticalAlignment="Top" Width="144" Grid.RowSpan="10" Grid.Column="1" Grid.Row="1" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center"
+                            Margin="10,0,0,0"
+                            Text="{Binding NombreCompleto}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name="txtNombre" Height="20" TextWrapping="Wrap" Width="350" Grid.Column="2" Grid.Row="2" Margin="{DynamicResource cuadrosInfo}" HorizontalAlignment="Right" />
+        <Label x:Name="lblNombre" Grid.Row="2" Grid.Column="2" Content="Nombre" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" />
+        <TextBox x:Name="txtCorreo" Height="20" TextWrapping="Wrap" Width="350" Grid.Column="2" Grid.Row="3" Margin="{DynamicResource cuadrosInfo}" HorizontalAlignment="Right" />
+        <Label x:Name="lblCorreo" Grid.Row="3" Grid.Column="2" Content="Correo" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" FontFamily="{DynamicResource TextoNormal}" RenderTransformOrigin="0.941,0.657" HorizontalAlignment="Left" />
+        <TextBox x:Name="txtDni" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" Width="350" Grid.Column="2" Grid.Row="4" Margin="{DynamicResource cuadrosInfo}" />
+        <Label x:Name="lblDni" Grid.Row="4" Grid.Column="2" Content="DNI" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" />
+        <TextBox x:Name="txtTelefono" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" Width="350" Grid.Column="2" Grid.Row="5" Margin="{DynamicResource cuadrosInfo}" />
+        <Label x:Name="lblTelefono" Grid.Row="5" Grid.Column="2" Content="Telefono" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" />
+        <TextBox x:Name="txtFormaPago" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" Width="350" Grid.Column="2" Grid.Row="6" Margin="{DynamicResource cuadrosInfo}" />
+        <Label x:Name="lblFormaPago" Grid.Row="6" Grid.Column="2" Content="Forma de pago" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" />
+        <TextBox x:Name="txtAyuda" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" Width="350" Grid.Column="2" Grid.Row="7" Margin="{DynamicResource cuadrosInfo}" />
+        <Label x:Name="lblAyuda" Grid.Row="7" Grid.Column="2" Content="Cuantia ayuda (€)" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" />
+        <TextBox x:Name="txtDatosBancarios" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" Width="350" Grid.Column="2" Grid.Row="8" Margin="{DynamicResource cuadrosInfo}" />
+        <Label x:Name="lblDatosBancarios" Grid.Row="8" Grid.Column="2" Content="Datos Bancarios" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" RenderTransformOrigin="0.557,-0.388" />
+        <Button x:Name="BtnAnadir" Content="Añadir" Grid.Column="2" Grid.Row="10" Background="#FF9B9684" FontSize="16" FontWeight="Bold" Margin="10,10,466.6,11.8" Click="BtnAnadir_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="BtnEliminar" Content="Eliminar" Grid.Column="2" Grid.Row="10" Background="#FF9B9684" FontSize="16" FontWeight="Bold" Margin="111,10,362.6,11.8" Click="BtnEliminar_Click" IsEnabled="False">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="BtnModificar" Content="Modificar" Grid.Column="2" Grid.Row="10" Background="#FF9B9684" FontSize="16" FontWeight="Bold" Margin="216,10,254.6,11.8" Click="BtnModificar_Click" IsEnabled="False">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="BtnMenu" Content="" Height="46" Grid.Row="10" VerticalAlignment="Center" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.Column="2" Margin="456,0,21.6,0" Click="BtnMenu_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Protectora;component/Recursos/menu.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnLimpiar" Content="Limpiar" Grid.Column="2" Grid.Row="10" Background="#FF9B9684" FontSize="16" FontWeight="Bold" Margin="323,10,143.6,11.8" Click="BtnLimpiar_Click" RenderTransformOrigin="0.5,0.504">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

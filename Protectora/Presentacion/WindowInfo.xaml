@@ -1,0 +1,52 @@
+﻿<Window x:Class="Protectora.Presentacion.WindowInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Protectora.Presentacion"
+        mc:Ignorable="d"
+        Title="WindowInfo" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Thickness x:Key="lbl_Info">0</Thickness>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="198*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="111*"/>
+            <ColumnDefinition Width="191*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="198*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="94*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Protectora;component/Recursos/19juni3.jpg" Opacity="0.6"/>
+        </Grid.Background>
+        <Border BorderBrush="Black" BorderThickness="1" Height="258" 
+VerticalAlignment="Bottom" Background="#FFF9F7F3" Margin="186,0,185.038,81" Grid.RowSpan="8" Grid.ColumnSpan="6"/>
+        <Label x:Name="lblAutor" Grid.Column="2" Content="Autor" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" RenderTransformOrigin="0.866,1.398" Grid.Row="1" />
+        <Label x:Name="lblVersion" Grid.Row="2" Grid.Column="2" Content="Versión" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" />
+        <Label x:Name="lblFechaVersion" Grid.Row="3" Grid.Column="2" Content="Fecha Versión" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" Grid.ColumnSpan="1" />
+        <Label x:Name="lblFechaEntrega" Grid.Row="4" Grid.Column="2" Content="Fecha Entrega" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" />
+        <Button Content="Button" Grid.Row="6" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.Column="4" Margin="0.4,8,198.038,7.4" Click="Button_Click" Grid.ColumnSpan="2" Width="40">
+            <Button.Background>
+                <ImageBrush ImageSource="/Protectora;component/Recursos/home.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblAsignatura" Grid.Row="5" Grid.Column="2" Content="Asignatura" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" />
+        <Label x:Name="lblAutor2" Grid.Column="3" Content="Alberto García Aparicio" FontSize="14" Foreground="Black" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" RenderTransformOrigin="0.866,1.398" Grid.Row="1" />
+        <Label x:Name="lblVersion2" Grid.Row="2" Grid.Column="3" Content="1.0.4" FontSize="14" Foreground="Black" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" />
+        <Label x:Name="lblFechaVersion2" Grid.Row="3" Grid.Column="3" Content="31-12-2021" FontSize="14" Foreground="Black" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" Grid.ColumnSpan="1" />
+        <Label x:Name="lblAsignatura_Copy" Grid.Row="5" Grid.Column="3" Content="IPO 1" FontSize="14" Foreground="Black" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" />
+        <Label x:Name="lblFechaEntrega2" Grid.Row="4" Grid.Column="3" Content="10-01-2022" FontSize="14" Foreground="Black" Margin="{DynamicResource lbl_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" VerticalAlignment="Center" Grid.ColumnSpan="1" />
+    </Grid>
+</Window>

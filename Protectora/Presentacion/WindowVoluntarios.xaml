@@ -1,0 +1,101 @@
+﻿<Window x:Class="Protectora.Presentacion.WindowVoluntarios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Protectora.Presentacion"
+        mc:Ignorable="d"
+        Title="WindowVoluntarios" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition Width="164*"/>
+            <ColumnDefinition Width="438*"/>
+            <ColumnDefinition Width="119*"/>
+            <ColumnDefinition Width="36*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Protectora;component/Recursos/19juni3.jpg" Opacity="0.6"/>
+        </Grid.Background>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Background="#FFF9F7F3" Height="420" Grid.RowSpan="11" VerticalAlignment="Top" Width="794" Grid.ColumnSpan="5" Margin="0,0,-0.4,0"/>
+        <GroupBox Grid.Column="2" Header="Caracteristicas" HorizontalAlignment="Left" Height="276" Margin="0,0.962,0,0" VerticalAlignment="Top" Width="548" Grid.RowSpan="8" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="ListBoxVoluntarios" HorizontalAlignment="Left" Height="354" Margin="10,9.8,0,0" VerticalAlignment="Top" Width="144" Grid.RowSpan="9" Grid.Column="1" Grid.Row="1" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center"
+                            Margin="10,0,0,0"
+                            Text="{Binding NombreCompleto}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name="txtNombre" Height="20" TextWrapping="Wrap" Width="250" Grid.Column="2" Grid.Row="2" Margin="0,8.6,20.4,8.2" HorizontalAlignment="Right" />
+        <Label x:Name="lblNombre" Grid.Row="1" Grid.Column="2" Content="Nombre" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" Grid.RowSpan="2" />
+        <TextBox x:Name="txtCorreo" Height="20" TextWrapping="Wrap" Width="250" Grid.Column="2" Grid.Row="3" Margin="0,8.8,20.4,8" HorizontalAlignment="Right" />
+        <Label x:Name="lblCorreo" Grid.Row="2" Grid.Column="2" Content="Correo" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" FontFamily="{DynamicResource TextoNormal}" RenderTransformOrigin="0.941,0.657" HorizontalAlignment="Left" Grid.RowSpan="2" />
+        <TextBox x:Name="txtDni" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" Width="250" Grid.Column="2" Grid.Row="4" Margin="0,8,20.4,8.8" />
+        <Label x:Name="lblDni" Grid.Row="4" Grid.Column="2" Content="DNI" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" />
+        <TextBox x:Name="txtTelefono" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" Width="250" Grid.Column="2" Grid.Row="5" Margin="0,8.2,20.4,8.6" />
+        <Label x:Name="lblTelefono" Grid.Row="5" Grid.Column="2" Content="Telefono" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" />
+        <TextBox x:Name="txtHorario" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" Width="250" Grid.Column="2" Grid.Row="6" Margin="0,8.4,20.4,9.2" />
+        <Label x:Name="lblHorario" Grid.Row="6" Grid.Column="2" Content="Horario" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" />
+        <TextBox x:Name="txtZonaDisponibilidad" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" Width="250" Grid.Column="2" Grid.Row="7" Margin="{DynamicResource cuadrosInfo}" />
+        <Label x:Name="lblZonaDisponibilidad" Grid.Row="7" Grid.Column="2" Content="Zona Disponibilidad" FontSize="14" Foreground="#FFBB936C" Margin="{DynamicResource label_Info}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" FontFamily="{DynamicResource TextoNormal}" />
+        <Image x:Name="fotoVoluntario" Height="129" Margin="0" VerticalAlignment="Top" Width="105" Grid.Column="3" Grid.RowSpan="4" Grid.Row="2" HorizontalAlignment="Left" Visibility="Hidden"/>
+        <Button x:Name="BtnAnadir" Content="Añadir" Grid.Column="2" Grid.Row="9" Background="#FF9B9684" FontSize="16" FontWeight="Bold" Margin="10,10,347.4,11.8" Click="BtnAnadir_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="BtnEliminar" Content="Eliminar" Grid.Column="2" Grid.Row="9" Background="#FF9B9684" FontSize="16" FontWeight="Bold" Margin="111,10,243.4,11.8" Click="BtnEliminar_Click" IsEnabled="False">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="BtnModificar" Content="Modificar" Grid.Column="2" Grid.Row="9" Background="#FF9B9684" FontSize="16" FontWeight="Bold" Margin="216,10,135.4,11.8" Click="BtnModificar_Click" IsEnabled="False">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="BtnMenu" Content="" Height="46" Grid.Row="9" VerticalAlignment="Center" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.Column="3" Margin="17.6,13,21.6,13.8" Click="BtnMenu_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Protectora;component/Recursos/menu.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnLimpiar" Content="Limpiar" Grid.Column="2" Grid.Row="9" Background="#FF9B9684" FontSize="16" FontWeight="Bold" Margin="323,10,24.4,11.8" Click="BtnLimpiar_Click" RenderTransformOrigin="0.5,0.504">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="BtnImagenVoluntarios" Content="Cambiar Imagen" Grid.Column="3" Grid.Row="7" Background="#FFBB936C" FontWeight="Bold" Margin="0,0,15,10" Click="BtnCargarImagenVoluntario_Click" IsEnabled="False">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>
